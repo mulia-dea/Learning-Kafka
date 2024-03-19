@@ -20,6 +20,15 @@ This documentation contains steps to learn the basics of Apache Kafka using the 
   ```
   sudo mv kafka_2.13-2.8.0 /opt/kafka
   ```
+* Create a Kafka User
+  ```
+  sudo useradd kafka -m
+  ```
+* Set Permissions
+  Set appropriate permissions to Kafka directories
+  ```
+  sudo chown -R kafka:kafka /opt/kafka
+  ```
 ### 2.Create init Service Kafka using Systemd
 * Create a systemd Unit File for Zookeeper
   ```
@@ -42,7 +51,7 @@ This documentation contains steps to learn the basics of Apache Kafka using the 
     
     [Install]
     WantedBy=multi-user.target
-  ```
+    ```
 * Create a systemd Unit File for Kafka
   ```
   sudo nano /etc/systemd/system/kafka.service
@@ -67,3 +76,49 @@ This documentation contains steps to learn the basics of Apache Kafka using the 
     WantedBy=multi-user.target
     ```
 ### 3.Manage kafka Service to start kafka
+* Reload systemd
+  ```
+  sudo systemctl daemon-reload
+  ```
+* Start zookeeper
+  ```
+  sudo systemctl start zookeeper
+  ```
+* Enable zookeeper
+  ```
+  sudo systemctl enable zookeeper
+  ```
+* Check status zookeeper
+  ```
+  sudo systemctl status zookeeper
+  ```
+* Start Kafka
+  ```
+  sudo systemctl start kafka
+  ```
+* Enable Kafka
+  ```
+  sudo systemctl enable kafka
+  ```
+* Check status Kafka
+  ```
+  sudo systemctl status kafka
+  ```
+### 4.Create Topic, Test Produce Data, Consume Data and Delete Topic using CLI
+* Create Topic
+  ```
+  bin/kafka-topics.sh --create --topic quickstart-events --bootstrap-server localhost:9092
+  ```
+* Write some events into the topic (Produce Data)
+  ```
+  bin/kafka-console-producer.sh --topic quickstart-events --bootstrap-server localhost:9092
+  ```
+* Read the events (Consume Data)
+  ```
+  bin/kafka-console-consumer.sh --topic quickstart-events --from-beginning --bootstrap-server localhost:9092
+  ```
+* Delete Topic
+  ```
+  ```
+### Zookeeper Quorum and Kafka Cluster id check
+
