@@ -18,6 +18,10 @@ This documentation contains steps to learn the basics of Apache Kafka using the 
   ```
   sudo passwd kafka
   ```
+* add user to sudo group
+  ```
+  sudo adduser kafka 
+  ```
 * login to user that we create
   ```
   sudo su - kafka
@@ -37,17 +41,33 @@ This documentation contains steps to learn the basics of Apache Kafka using the 
   ```
   tar -xzf kafka_2.12-3.7.0.tgz
   ```
-* Move Kafka to folder /opt/kafka
+* Create kafka folder and change directory to kafka folder
   ```
-  sudo mv kafka_2.13-2.8.0 /opt/kafka
+  mkdir ~/kafka && cd ~/kafka
   ```
-* Set Permissions
-  Set appropriate permissions to Kafka directories
+* Extract kafka tar from download folder to kafka folder (now at kafka folder)
   ```
-  sudo chown -R kafka:kafka /opt/kafka
+  tar -xzf ~/Downloads/kafka_2.12-3.7.0.tgz --strip 1
   ```
+### 2. Edit Configuration Kafka Broker
+- Mengubah file configuration di file server.properties
+- broker.id: Setiap broker dalam klaster Kafka harus memiliki ID yang unik
+- listeners: Tentukan alamat dan port yang digunakan oleh broker untuk menerima koneksi dari produsen dan konsumen.
+- log.dirs: Tentukan direktori tempat log Kafka disimpan
+- log.dir: Tentukan direktori tempat Kafka menyimpan data yang sedang diproses
 
-### 2.Create init Service Kafka using Systemd
+Sebelum mengubah log.dir perlu dibuat tempat penyimpanannya terlebih dahulu
+Create new directory 
+```
+mkdir -p ~/data/kafka-logs
+```
+log.dirs=/home/kafka/data/kafka-logs
+  Saya mengubah log.dirs
+  ```
+  sudo nano config/server.properties
+  ```
+  
+### 3.Create init Service Kafka using Systemd
 Using systemd to manage Apache Kafka on CentOS Linux makes it easier to handle the Kafka service, including starting, stopping, and automatically restarting it if it fails.
 To run Apache Kafka using systemd along with Zookeeper, it is necessary to create separate systemd unit files for both Kafka and Zookeeper.
 * Create a systemd Unit File for Zookeeper
