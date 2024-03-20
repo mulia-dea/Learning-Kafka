@@ -5,9 +5,9 @@ This documentation contains steps to learn the basics of Apache Kafka using the 
 ### 1. Install & Configuration
 #### Install java/jdk
 Apache Kafka requires Java to be installed. You can install OpenJDK using the following command
-  ```
-  sudo yum install java-1.8.0-openjdk
-  ```
+```
+sudo yum install java-1.8.0-openjdk
+```
 Check java version 
 ```
 java -version
@@ -54,13 +54,13 @@ java -version
   ![tar kafka zip](https://github.com/mulia-dea/Learning-Kafka/assets/67699035/f53802da-626e-4e23-9177-3eee4df0e74b)
 
 ### 2. Edit Kafka Configuration 
-The server.properties file is a configuration file used by Apache Kafka brokers
-- Mengubah file configuration di file server.properties
+Change the configuration file in the server.properties file. The server.properties file is a configuration file used by Apache Kafka brokers
 - broker.id: Each Kafka broker in a cluster must have a unique ID
 - listeners:  Specifies the network interfaces and ports that the broker should listen on for incoming connections from producers and consumers.
 - log.dirs: Specifies the directory where Kafka stores its log files, which contain the records published to topics
 
 In this case, I will only edit the log.dirs section. Before it, determine where the Kafka log directory will be stored. I will create new directory **data/kafka-logs**
+
 Create new directory 
 ```
 mkdir -p ~/data/kafka-logs
