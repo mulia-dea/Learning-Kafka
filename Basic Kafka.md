@@ -157,11 +157,19 @@ To run Apache Kafka using systemd along with Zookeeper, it is necessary to creat
   sudo systemctl status kafka
   ```
   ![ss system status kafka](https://github.com/mulia-dea/Learning-Kafka/assets/67699035/efa46cb6-7f2c-42db-a976-d93e4f7858cb)
-
+  
+* Check List Network Connections
+  The netstat -plntu command is used to display a list of ongoing network connections on your system, along with the ports used and the processes associated with each connection.
+  We only focus on port 2181 for zookeeper and 9092 for kafka. For check it, use the command below
+  ```
+  netstat -plntu
+  ```
+  ![ss netstat plntu](https://github.com/mulia-dea/Learning-Kafka/assets/67699035/e7b24dec-dc13-4f68-868a-e0319b36deee)
 
 ### 5.Create Topic, Test Produce Data, Consume Data and Delete Topic using CLI
 * Create Topic
-   **first-topic** is name of the topic, can be customized
+
+  **first-topic** is name of the topic, can be customized
   ```
   bin/kafka-topics.sh --create --topic first-topic --bootstrap-server localhost:9092
   ```
