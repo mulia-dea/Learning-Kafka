@@ -1,6 +1,5 @@
 # Introduction Linux
-## Linux Permission
-### User dan Group
+## User dan Group
 * **User**
   - Sebuah "user" adalah entitas tunggal yang diidentifikasi oleh sistem Linux
   - Ketika seorang pengguna masuk ke dalam sistem, identitasnya (termasuk hak akses dan hak istimewa) ditentukan oleh akun pengguna tersebut
@@ -14,7 +13,7 @@
   - **Peningkatan Keamanan:** Dengan memberikan izin akses yang sesuai kepada grup yang tepat, administrator dapat memastikan bahwa pengguna hanya memiliki akses ke file yang mereka butuhkan untuk pekerjaan mereka. Ini membantu mengurangi risiko penyalahgunaan atau akses yang tidak sah
   - **Pemisahan Tugas:** Konsep user dan group memungkinkan pemisahan tugas dan hak akses dalam organisasi atau lingkungan kerja. Ini memungkinkan administrator untuk mengatur izin berdasarkan peran atau tanggung jawab pengguna, yang membantu dalam menjaga integritas data dan keamanan sistem.
 
-### Permission
+## Linux Permission
 Setiap file dan direktori di sistem Linux memiliki tiga jenis izin: izin untuk pemilik (owner), grup, dan pengguna lain (lainnya).
 Tiga jenis izin yang biasa digunakan adalah:
 * **Read (R):** Memungkinkan pengguna membaca isi dari file atau melihat isi dari sebuah direktori.
@@ -39,7 +38,7 @@ Izin akses drwxr-xr-x mengacu pada izin akses untuk sebuah direktori
 - r-x: Izin akses untuk grup yang memiliki direktori. Anggota grup memiliki izin untuk membaca dan menjalankan direktori, tetapi tidak memiliki izin untuk menulis ke dalamnya.
 - r-x: Izin akses untuk pengguna lain di luar grup. Pengguna lain memiliki izin untuk membaca dan menjalankan direktori, tetapi tidak memiliki izin untuk menulis ke dalamnya
 
-### Commands Tools
+## Commands Tools
 - chmod: change permissions of a file
 - chown: change the ownership of a file
 - rm: removes files/directories
