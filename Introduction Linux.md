@@ -22,6 +22,22 @@ Tiga jenis izin yang biasa digunakan adalah:
 * **Execute (X):**
   - Memungkinkan pengguna menjalankan file (jika itu adalah program) atau mengakses isi dari sebuah direktori (jika izin X diberikan untuk sebuah direktori). Untuk direktori:
   - Jika perizinan ini diberikan pada sebuah direktori, pengguna dapat masuk ke dalam direktori tersebut dan menjalankan perintah di dalamnya.
+ 
+Dengan menggunakan perintah 'll' akan menampikan daftar isi direktori dengan detail seperti izin, pemilik, grup, ukuran, tanggal modifikasi, dan nama file/direktori. Contoh:
+    `drwxr-xr-x. 3 kafka kafka  4096 Feb  9 20:30 bin`
+- drwxr-xr-x.: Menunjukkan tipe file dan izin akses. Di sini, itu menunjukkan bahwa itu adalah sebuah direktori (d), dan izin aksesnya adalah rwxr-xr-x.
+- 3: Menunjukkan jumlah hard link ke direktori atau file.
+- kafka: Nama pemilik direktori atau file.
+- kafka: Nama grup yang memiliki direktori atau file.
+- 4096: Ukuran dalam byte (atau blok) dari direktori atau file.
+- Feb 9 20:30: Tanggal dan waktu modifikasi terakhir.
+- bin: Nama direktori atau file.
+
+Izin akses drwxr-xr-x mengacu pada izin akses untuk sebuah direktori
+- d: Menunjukkan bahwa ini adalah sebuah direktori
+- rwx: Izin akses untuk pemilik direktori. r mewakili izin membaca (read), w mewakili izin menulis (write), dan x mewakili izin menjalankan (execute). Dalam kasus ini, pemilik memiliki izin untuk membaca, menulis, dan menjalankan direktori.
+- r-x: Izin akses untuk grup yang memiliki direktori. Anggota grup memiliki izin untuk membaca dan menjalankan direktori, tetapi tidak memiliki izin untuk menulis ke dalamnya.
+- r-x: Izin akses untuk pengguna lain di luar grup. Pengguna lain memiliki izin untuk membaca dan menjalankan direktori, tetapi tidak memiliki izin untuk menulis ke dalamnya
 
 ### Commands Tools
 - chmod: change permissions of a file
