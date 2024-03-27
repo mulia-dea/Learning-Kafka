@@ -42,3 +42,4 @@ Izin akses drwxr-xr-x mengacu pada izin akses untuk sebuah direktori
 - chmod: change permissions of a file
 - chown: change the ownership of a file
 - rm: removes files/directories
+- coba saja
