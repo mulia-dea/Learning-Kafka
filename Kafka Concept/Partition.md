@@ -11,4 +11,10 @@ Partisi memungkinkan Kafka untuk membagi beban kerja, mempercepat proses, dan me
 - **Toleransi Kesalahan** :Setiap partisi dapat memiliki replika, yang merupakan salinan dari partisi yang asli. Jika sebuah partisi mengalami kegagalan, Kafka dapat terus melayani data dari replikasi partisi yang masih aktif.
 
 ## Konfigurasi Partisi
-Ukuran Partisi: Penting untuk memperhatikan ukuran partisi. Partisi yang terlalu besar dapat menyebabkan kinerja yang buruk dan meningkatkan kompleksitas manajemen. 
+Ukuran Partisi: Penting untuk memperhatikan ukuran partisi. Partisi yang terlalu besar dapat menyebabkan kinerja yang buruk dan meningkatkan kompleksitas manajemen.
+
+## Segmen
+Segmen adalah unit dasar dalam penyimpanan data Kafka yang digunakan untuk menyimpan pesan-pesan yang diterima oleh topik
+Setiap partisi terdiri dari beberapa segmen yang menyimpan pesan-pesan data
+Pemisahan partisi menjadi segmen-segmen memungkinkan Kafka untuk mengelola data dengan lebih efisien.
+
