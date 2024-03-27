@@ -14,7 +14,23 @@ Partisi memungkinkan Kafka untuk membagi beban kerja, mempercepat proses, dan me
 Ukuran Partisi: Penting untuk memperhatikan ukuran partisi. Partisi yang terlalu besar dapat menyebabkan kinerja yang buruk dan meningkatkan kompleksitas manajemen.
 
 ## Segmen
-Segmen adalah unit dasar dalam penyimpanan data Kafka yang digunakan untuk menyimpan pesan-pesan yang diterima oleh topik
-Setiap partisi terdiri dari beberapa segmen yang menyimpan pesan-pesan data
-Pemisahan partisi menjadi segmen-segmen memungkinkan Kafka untuk mengelola data dengan lebih efisien.
+### Konsep Segmen
+- Segmen adalah unit dasar dalam penyimpanan data Kafka yang digunakan untuk menyimpan pesan-pesan yang diterima oleh topik
+- Setiap partisi tersebut dapat menjadi besar seiring waktu karena akumulasi pesan baru. Jika partisi menjadi terlalu besar, ini dapat menyebabkan kinerja yang buruk dan kesulitan dalam manajemen.
+- Segmentasi di partisi adalah proses membagi partisi menjadi segmen-segmen yang lebih kecil.
+- Setiap partisi terdiri dari beberapa segmen yang menyimpan pesan-pesan data
+- Pemisahan partisi menggunakan segmen untuk mengatur dan menyimpan data secara efisien
+- Segmen-segmen baru dibuat secara otomatis oleh Kafka saat partisi ditulis.
+- Setelah segmen mencapai batas ukuran tertentu atau batas waktu tertentu, Kafka menutup segmen itu dan memulai segmen baru.
+- Batas segment bisa berdasarkan jumlah pesan atau ukuran data. Jika batas segmen tidak ditentukan secara eksplisit, maka kafka akan menetapkan nya secara default
+
+### Masalah Segmentasi Pada Partisi
+Pembagian segmen dalam partisi ditentukan dalam kafka sendiri berdasarkan konfigurasi retensi yang telah ditetapkan oleh pengguna. 
+1. **Ukuran Segmen Terlalu Besar:**
+   - Segmen-segmen yang terlalu besar dapat menyebabkan keterlambatan dalam pengiriman pesan dan meningkatkan waktu pemulihan dalam kasus kegagalan.
+   - Hal ini dapat terjadi jika kebijakan retensi tidak diatur dengan benar atau jika terjadi lonjakan trafik yang menghasilkan segmen-segmen besar.
+2. **Pembuatan Segmen Terlalu Sering:**
+   - Pembuatan segmen-segmen baru terlalu sering dapat menyebabkan overhead yang tidak perlu dalam manajemen partisi-topik.
+   - Ini dapat terjadi jika kebijakan retensi waktu terlalu singkat atau jika konfigurasi retensi ukuran tidak diatur dengan baik.
+
 
