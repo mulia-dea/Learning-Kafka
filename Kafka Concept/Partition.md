@@ -1,5 +1,5 @@
 # Kafka Concept 
-## Definisi Paartisi 
+## Definisi Partisi 
 - Partisi adalah cara Kafka membagi data dalam topik menjadi bagian-bagian yang terpisah.
 - Setiap topik dalam Kafka dapat memiliki beberapa partisi. 
 - Setiap pesan yang dipublikasikan ke topik disimpan dalam salah satu dari partisi-partisi ini.
@@ -12,5 +12,3 @@ Partisi memungkinkan Kafka untuk membagi beban kerja, mempercepat proses, dan me
 
 ## Konfigurasi Partisi
 Ukuran Partisi: Penting untuk memperhatikan ukuran partisi. Partisi yang terlalu besar dapat menyebabkan kinerja yang buruk dan meningkatkan kompleksitas manajemen. 
-
-## Retention
