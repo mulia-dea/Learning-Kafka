@@ -80,7 +80,7 @@ public class Producer {
 ```
 Pada konfigurasi properties, bisa disesuaikan dengan konfigurasi yang dibutuhkan 
 
-Disini saya menggunakan loop untuk mengirimkan data ke topik Kafka.
+Disini saya menggunakan loop untuk mengirimkan data format string ke topik Kafka.
 ```
 for(int i=0; i<1000; i++){
     ProducerRecord record = new ProducerRecord(topic, "Data ke "+ i); 
@@ -132,6 +132,7 @@ public class Consumer {
 Pada konfigurasi properties, bisa disesuaikan dengan konfigurasi yang dibutuhkan 
 
 # Delete Topic dengan Java
+Membuat kelas 'ContohDelete' untuk menghapus sebuah topik Kafka menggunakan Kafka AdminClient.
 ```
 package org.example;
 
@@ -166,6 +167,10 @@ public class contohDelete {
         future.get();
         System.out.println("Topic " + topicName + " deleted successfully");
     }
-
 }
+```
+Modifikasi variabel di bawah sesuai konfigurasi Kafka
+```
+String bootstrapServers = "worker2.k8s.alldataint.com:9092";
+String topicName = "test-topic";
 ```
