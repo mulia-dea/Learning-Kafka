@@ -23,7 +23,7 @@ properties.setProperty(ProducerConfig.MAX_REQUEST_SIZE_CONFIG,"11000000");
 ```
 
 ## Read File Text (TXT) to String
-Code dibawah merupakan untuk 
+Code dibawah merupakan untuk membaca isi file text(txt) dan dikembalikan dalam bentuk String
 ```
 private static String readFileToString(String fileName) throws IOException {
     InputStream inputStream = new FileInputStream(fileName);
@@ -39,6 +39,8 @@ private static String readFileToString(String fileName) throws IOException {
 ```
 
 ## Read File JSON to String
+Code dibawah merupakan untuk membaca isi file JSON dan dikembalikan dalam bentuk String
+```
 private static String readFileToString(String fileName) throws IOException, ParseException {
     JSONParser jsonParser = new JSONParser();
     JSONArray jsonArray;
@@ -48,4 +50,4 @@ private static String readFileToString(String fileName) throws IOException, Pars
     }
     return jsonArray.toJSONString();
 }
-
+```
