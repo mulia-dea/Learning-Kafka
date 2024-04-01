@@ -39,7 +39,7 @@ private static String readFileToString(String fileName) throws IOException {
 ```
 
 ## Read File JSON to String
-Code dibawah merupakan untuk membaca isi file JSON dan dikembalikan dalam bentuk String
+Code dibawah merupakan untuk membaca isi file JSON dan dikembalikan dalam bentuk String. Disini file json yang digunakan yaitu berbentuk JSON Array. Jika tipe nya berbentuk JSONObject maka perlu hasil dari parsing ke tipe JSONObject
 ```
 private static String readFileToString(String fileName) throws IOException, ParseException {
     JSONParser jsonParser = new JSONParser();
